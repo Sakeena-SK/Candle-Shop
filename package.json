@@ -1,0 +1,36 @@
+{
+  "name": "candle-shop",
+  "version": "1.0.0",
+  "description": "A simple and elegant e-commerce website for candle products. Customers can browse available candles and add their favorite items to a shopping cart. Admins can log in to manage the products (add, update, delete).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sakeena-SK/Candle-Shop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sakeena-SK/Candle-Shop/issues"
+  },
+  "homepage": "https://github.com/Sakeena-SK/Candle-Shop#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "jsx-view-engine": "^1.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.17.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "artillery": "^1.7.9",
+    "jest": "^30.0.5",
+    "mongodb-memory-server": "^10.1.4",
+    "supertest": "^7.1.4"
+  }
+}

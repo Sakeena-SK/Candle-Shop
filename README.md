@@ -24,9 +24,9 @@ A simple and elegant e-commerce website for candle products. Customers can brows
 - MongoDB with Mongoose
 - JWT (JSON Web Tokens)
 - HTML / CSS (custom)
-- Mocha + Chai (unit testing)
 - Artillery (optional load testing)
 - Trello for planning
+- ISX
 
 ---
 ## 🕯️ Candle Routes
