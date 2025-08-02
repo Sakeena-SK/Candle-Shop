@@ -1,14 +1,15 @@
-
-exports.showCreatedCategory = (req, res) => {
-  res.json(res.locals.data.category)
-}
-
-
-exports.showAllCategories = (req, res) => {
+exports.index = (req, res) => {
   res.json(res.locals.data.categories)
 }
 
+exports.show = (req, res) => {
+  res.json(res.locals.data.category)
+}
 
-exports.showDeletedCategory = (req, res) => {
-  res.json(res.locals.data)
+exports.create = (req, res) => {
+  res.status(201).json(res.locals.data.category)
+}
+
+exports.destroy = (req, res) => {
+  res.json({ message: 'Category deleted', ...res.locals.data })
 }
