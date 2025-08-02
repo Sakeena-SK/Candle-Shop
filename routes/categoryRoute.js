@@ -3,7 +3,7 @@ const router = express.Router()
 
 const authData = require('../controllers/auth/dataController')
 const categoryData = require('../controllers/category/dataController')
-const categoryAPI = require('../controllers/category/apiController')
+const categoryAPI = require('./controllers/category/apiController')
 
 // Get all categories
 router.get('/categories', categoryData.getAllCategories, categoryAPI.index)
