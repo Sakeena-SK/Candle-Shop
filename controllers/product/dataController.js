@@ -5,8 +5,8 @@ exports.createProduct = async (req, res, next) => {
     const product = await Product.create(req.body)
     res.locals.data = { product }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to create product', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -15,8 +15,8 @@ exports.getAllProducts = async (req, res, next) => {
     const products = await Product.find().populate('category')
     res.locals.data = { products }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to get products', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -28,8 +28,8 @@ exports.getProductById = async (req, res, next) => {
     }
     res.locals.data = { product }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to get product', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -45,8 +45,8 @@ exports.updateProduct = async (req, res, next) => {
     }
     res.locals.data = { product: updatedProduct }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to update product', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -58,7 +58,7 @@ exports.deleteProduct = async (req, res, next) => {
     }
     res.locals.data = { message: 'Product deleted', deleted }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to delete product', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }

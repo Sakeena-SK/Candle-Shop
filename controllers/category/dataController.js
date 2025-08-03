@@ -5,8 +5,8 @@ exports.createCategory = async (req, res, next) => {
     const category = await Category.create(req.body)
     res.locals.data = { category }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to create category', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -15,8 +15,8 @@ exports.getAllCategories = async (req, res, next) => {
     const categories = await Category.find()
     res.locals.data = { categories }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to get categories', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -28,8 +28,8 @@ exports.getCategoryById = async (req, res, next) => {
     }
     res.locals.data = { category }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to get category', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -45,8 +45,8 @@ exports.updateCategory = async (req, res, next) => {
     }
     res.locals.data = { category: updatedCategory }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to update category', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }
 
@@ -58,7 +58,7 @@ exports.deleteCategory = async (req, res, next) => {
     }
     res.locals.data = { message: 'Category deleted', deleted }
     next()
-  } catch (err) {
-    res.status(400).json({ error: 'Failed to delete category', details: err })
+  } catch(error){
+    res.status(400).json({message: error.message})
   }
 }

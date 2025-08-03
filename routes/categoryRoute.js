@@ -1,23 +1,21 @@
 const express = require('express')
 const router = express.Router()
 
-const authData = require('../controllers/auth/dataController')
-const categoryData = require('../controllers/category/dataController')
-const categoryAPI = require('./controllers/category/apiController')
+const dataController = require('../controllers/category/dataController')
+const apiController = require('../controllers/category/apiController')
+const viewController = require('../controllers/category/viewController')
+console.log('dataController', dataController)
+console.log('viewController', viewController)
 
-// Get all categories
-router.get('/categories', categoryData.getAllCategories, categoryAPI.index)
+// API Routes
+router.get('/api', dataController.getAllCategories, apiController.index)
+router.get('/api/:id', dataController.getCategoryById, apiController.show)
+router.post('/api', dataController.createCategory, apiController.create)
+router.put('/api/:id', dataController.updateCategory, apiController.show)
+router.delete('/api/:id', dataController.deleteCategory, apiController.destroy)
 
-// Get one category by ID
-router.get('/categories/:id', categoryData.getCategoryById, categoryAPI.show)
-
-// Create a category (admin only)
-router.post('/categories', authData.auth, categoryData.createCategory, categoryAPI.show)
-
-// Update category
-router.put('/categories/:id', authData.auth, categoryData.updateCategory, categoryAPI.show)
-
-// Delete category
-router.delete('/categories/:id', authData.auth, categoryData.deleteCategory, categoryAPI.show)
+// View Routes
+router.get('/', dataController.getAllCategories, viewController.showCategories)
+router.get('/:id/edit', dataController.getCategoryById, viewController.editCategory)
 
 module.exports = router
