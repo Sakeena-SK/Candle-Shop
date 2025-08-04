@@ -5,11 +5,13 @@ function Index (props){
     return (
         <div>
             <h1>Index Page</h1>
-            <a href={`/categories/new?token=${props.token}`}>Create A New Category</a>
+            <a href={`/category/new?token=${props.token}`}>Create A New Category</a>
             <ul>
+
                 {
+                    
                    categories.map((category) => {
-                    return (<li>This is the <a href={`/categories/${category.id}?token=${props.token}`}>{category.name}</a> of the color {category.Descreption}</li>)
+                    return (<li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.Descreption}</li>)
                    }) 
                 }
             </ul>

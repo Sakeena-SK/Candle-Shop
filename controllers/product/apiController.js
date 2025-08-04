@@ -1,11 +1,28 @@
-exports.showCreatedProduct = (req, res) => {
-  res.json(res.locals.data.product)
+const Product = require('../../models/product.js')
+
+// API product controllers - returns JSON responses
+const apiController = {
+  // Get all product for authenticated user
+  index(req, res) {
+    res.json(res.locals.data.Product)
+  },
+
+  // Get single product
+  show(req, res) {
+    res.json(res.locals.data.Product)
+  },
+
+  // Create new product
+  create(req, res) {
+    res.status(201).json(res.locals.data.Product)
+  },
+
+ 
+
+  // Delete product
+  destroy(req, res) {
+    res.status(200).json({ message: 'Products successfully deleted' })
+  }
 }
 
-exports.showAllProducts = (req, res) => {
-  res.json(res.locals.data.products)
-}
-
-exports.showDeletedProduct = (req, res) => {
-  res.json(res.locals.data)
-}
+module.exports = apiController 
