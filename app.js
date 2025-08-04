@@ -28,8 +28,8 @@ app.use((req, res, next) => {
 // Routes
 app.use('/customer', authCustomerRoute)
 app.use('/owner', authOwnerRoute)
-app.use('/category', categoryRoutes) // ← ✅ مطابق مع المتغير
+app.use('/category', categoryRoutes) 
 app.use('/product', productRoutes)
-app.use('/cart', cartRoutes)
+// app.use('/cart', cartRoutes)
 
 module.exports = app
