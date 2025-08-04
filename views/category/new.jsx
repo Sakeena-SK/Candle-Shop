@@ -3,8 +3,10 @@ const React = require('react')
 function New (props) {
     return(
         <div>
+            <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
             <h1>Categories</h1>
             <a href={`/category?token=${props.token}`}>Cancle</a>
+            
             <form action={`/category?token=${props.token}`} method="POST">
                 Name: <input type="text" name="name" /><br/>
                 Descreption: <input type="text" name="descreption" /><br/>

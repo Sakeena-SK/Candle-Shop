@@ -10,6 +10,7 @@ const userSchema = new mongoose.Schema({
 function SignUp (props) {
     return(
         <div>
+            <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
             <h1>Sign Up For The Greatest Of All Time</h1>
             <form action="/users" method="POST">
                 Name: <input type="text" name="name" /><br/>

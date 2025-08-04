@@ -5,7 +5,7 @@ const dataController = {}
 dataController.index = async (req, res, next) => {
    try {
     const Products = await Product.find({})
-    res.locals.data.Products = Products
+    res.locals.data.products = Products
     next()
    } catch(error) {
     res.status(400).send({ message: error.message })
@@ -56,7 +56,7 @@ dataController.destroy = async (req, res, next) => {
     const user = req.user
   try {
     if (user.role === 'owner') {
-    res.locals.data.product = await deleteProduct.findByIdAndDelete(req.params.id)
+    res.locals.data.product = await Product.findByIdAndDelete(req.params.id)
      
     next()
   } else {

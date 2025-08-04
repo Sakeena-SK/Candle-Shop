@@ -4,6 +4,7 @@ function Index (props){
     const categories = props.categories
     return (
         <div>
+            <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
             <h1>Index Page</h1>
             <a href={`/category/new?token=${props.token}`}>Create A New Category</a>
             <ul>

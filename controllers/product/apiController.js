@@ -4,7 +4,7 @@ const Product = require('../../models/product.js')
 const apiController = {
   // Get all product for authenticated user
   index(req, res) {
-    res.json(res.locals.data.Product)
+    res.json(res.locals.data.product)
   },
 
   // Get single product
