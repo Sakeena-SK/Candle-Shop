@@ -2,8 +2,9 @@ const React = require('react')
 
 function New (props) {
     return(
+        <layout>
         <div>
-            <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
+            {/* <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a> */}
             <h1>Categories</h1>
             <a href={`/category?token=${props.token}`}>Cancle</a>
             
@@ -13,7 +14,7 @@ function New (props) {
                 Image: <input type="text" name="Image" /><br/>
                 <input type="submit" value="Create Category" />
             </form>
-        </div>
+        </div></layout>
     )
 }
 

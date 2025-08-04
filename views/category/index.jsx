@@ -3,6 +3,7 @@ const React = require('react')
 function Index (props){
     const categories = props.categories
     return (
+        <layout>
         <div>
             <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
             <h1>Index Page</h1>
@@ -16,7 +17,7 @@ function Index (props){
                    }) 
                 }
             </ul>
-        </div>
+        </div></layout>
     )
 }
 

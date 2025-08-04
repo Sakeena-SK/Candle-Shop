@@ -5,8 +5,9 @@ const styles = {
 }
 function Show(props){
     return(
+        <layout>
         <div style={styles}>
-            <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
+            {/* <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a> */}
             <h1>{props.category.name}</h1>
             <a href={`/category/?token=${props.token}`}>Go back to Index Page</a>
             <a href={`/product/?token=${props.token}`}>Products Page</a>
@@ -20,7 +21,7 @@ function Show(props){
             <div>
             <a href={`/category/${props.category._id}/edit?token=${props.token}`}><button>{`Edit this ${props.category.name}`}</button></a>
             </div>
-        </div>
+        </div></layout>
     )
 }
 
