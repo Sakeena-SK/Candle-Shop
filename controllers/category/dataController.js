@@ -1,64 +1,65 @@
-const Category = require('../../models/category')
+const Categories = require('../../models/category.js');
 
-exports.createCategory = async (req, res, next) => {
-  try {
-    const category = await Category.create(req.body)
-    res.locals.data = { category }
+const dataController = {}
+
+dataController.index = async (req, res, next) => {
+   try {
+    const user = await req.user.populate('category')
+    res.locals.data.category = user.category
     next()
-  } catch(error){
-    res.status(400).json({message: error.message})
+   } catch(error) {
+    res.status(400).send({ message: error.message })
   }
 }
-
-exports.getAllCategories = async (req, res, next) => {
-  try {
-    const categories = await Category.find()
-    res.locals.data = { categories }
-    next()
-  } catch(error){
-    res.status(400).json({message: error.message})
-  }
-}
-
-exports.getCategoryById = async (req, res, next) => {
-  try {
-    const category = await Category.findById(req.params.id)
-    if (!category) {
-      return res.status(400).json({ error: 'Category not found' })
+dataController.destroy = async (req, res, next) => {
+    try {
+        await Fruit.findOneAndDelete({'_id': req.params.id}).then(() => {
+            next()
+        })
+    } catch(error) {
+        res.status(400).send({ message: error.message })
     }
-    res.locals.data = { category }
-    next()
-  } catch(error){
-    res.status(400).json({message: error.message})
-  }
+}
+dataController.update = async (req, res, next) => {
+    if (req.body.readyToEat === 'on'){
+        req.body.readyToEat = true;
+    } else if (req.body.readyToEat !== true) {
+        req.body.readyToEat = false;
+    }
+    try {
+        res.locals.data.fruit = await Fruit.findByIdAndUpdate(req.params.id, req.body, {new: true})
+        next()
+    } catch(error) {
+        res.status(400).send({ message: error.message })
+    }
 }
 
-exports.updateCategory = async (req, res, next) => {
-  try {
-    const updatedCategory = await Category.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true, runValidators: true }
-    )
-    if (!updatedCategory) {
-      return res.status(400).json({ error: 'Category not found' })
+dataController.create = async (req, res, next) => {
+    if (req.body.readyToEat === 'on'){
+        req.body.readyToEat = true;
+    } else if (req.body.readyToEat !== true) {
+        req.body.readyToEat = false;
     }
-    res.locals.data = { category: updatedCategory }
-    next()
-  } catch(error){
-    res.status(400).json({message: error.message})
-  }
+    try {
+        res.locals.data.fruit = await Fruit.create(req.body)
+        req.user.category.addToSet({_id: res.locals.data.fruit._id})
+        await req.user.save()
+        next()
+    } catch(error) {
+        res.status(400).send({ message: error.message })
+    }
 }
 
-exports.deleteCategory = async (req, res, next) => {
-  try {
-    const deleted = await Category.findByIdAndDelete(req.params.id)
-    if (!deleted) {
-      return res.status(400).json({ error: 'Category not found' })
+dataController.show = async (req,res,next) => {
+    try {
+        res.locals.data.fruit = await Fruit.findById(req.params.id)
+        if (!res.locals.data.fruit) {
+            throw new error(`could not locate a fruit with the id ${req.params.id}`)
+        }
+        next()
+    } catch(error) {
+        res.status(400).send({ message: error.message })
     }
-    res.locals.data = { message: 'Category deleted', deleted }
-    next()
-  } catch(error){
-    res.status(400).json({message: error.message})
-  }
 }
+
+module.exports = dataController

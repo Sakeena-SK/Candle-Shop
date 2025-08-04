@@ -78,7 +78,7 @@ exports.deleteUser = async (req, res) => {
 // API Get user profile
 exports.getProfile = async (req, res) => {
   try {
-    await req.user.populate('categories')
+    await req.user.populate('fruits')
     res.json({ user: req.user })
   } catch (error) {
     res.status(400).json({ message: error.message })

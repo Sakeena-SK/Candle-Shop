@@ -1,9 +1,14 @@
 const express = require('express')
 const router = express.Router()
-
 const dataController = require('./dataController')
-const apiController = require('./apiController')
+const viewController = require('./viewController')
+const categoriesViewController = require('../category/viewController')
 
-router.post('/login', dataController.loginOwner, apiController.apiAuth)
+router.post('/', dataController.createUser, viewController.redirectToLogin)
+router.get('/', viewController.signUp)
+router.post('/login', dataController.loginUser, categoriesViewController.redirectHome)
+router.get('/login',viewController.signIn)
+router.put('/:id', dataController.updateUser)
+router.delete('/:id', dataController.auth, dataController.deleteUser)
 
 module.exports = router
