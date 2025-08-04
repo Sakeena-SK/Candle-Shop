@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const dataController = require('./dataController')
 const viewController = require('./viewController')
-const categoriesViewController = require('../category/viewController')
+const categoriesViewController = require('../../category/viewController')
 
 router.post('/', dataController.createUser, viewController.redirectToLogin)
 router.get('/', viewController.signUp)
