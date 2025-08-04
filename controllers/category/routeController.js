@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const viewController = require('./viewController.js')
 const dataController = require('./dataController.js')
-const authDataController = require('../auth/owner/dataController.js')
+const authDataController = require('../auth/dataController.js')
 // add routes
 // Index
 router.get('/', authDataController.auth

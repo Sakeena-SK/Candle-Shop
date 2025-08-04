@@ -15,6 +15,10 @@ function SignUp (props) {
                 Name: <input type="text" name="name" /><br/>
                 Email: <input type="email" name="email" /><br/>
                 Password: <input type="password" name="password" /><br/>
+                Role: <select name="role" >
+                    <option value="owner">owner</option>
+                    <option value="customer">customer</option>
+                </select><br/>
                 <input type="submit" value="Submit to Register" />
             </form>
         </div>

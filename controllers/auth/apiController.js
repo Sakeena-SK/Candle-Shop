@@ -1,4 +1,4 @@
-const User = require('../../../models/user')
+const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -78,7 +78,7 @@ exports.deleteUser = async (req, res) => {
 // API Get user profile
 exports.getProfile = async (req, res) => {
   try {
-    await req.user.populate('fruits')
+    await req.user.populate('categories')
     res.json({ user: req.user })
   } catch (error) {
     res.status(400).json({ message: error.message })

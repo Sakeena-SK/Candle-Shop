@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const userApiController = require('../controllers/auth/owner/apiController')
+const userApiController = require('../controllers/auth/apiController')
 const categoryAPIController = require('../controllers/category/apiController')
 const categoryDataController = require('../controllers/category/dataController')
 

@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  category: [{ type: mongoose.Schema.Types.ObjectId, ref:'Category'}]
+  role: {type: String, enum: ['owner', 'customer'], default: 'customer'}
 })
 
 // Hide password from JSON responses
