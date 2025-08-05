@@ -19,7 +19,7 @@ if (user.role === 'owner') {
   const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true })
   res.locals.data.Product = updatedProduct
   next()
-} else {
+} else if(user.role === 'customer') {
   res.status(403).json({ error: 'Unauthorized' })
 }
     } catch(error) {
@@ -32,9 +32,10 @@ dataController.create = async (req, res, next) => {
   try {
     if (user.role === 'owner') {
       const newProduct = await Product.create(req.body)
-    }else
+    }else if (user.role === 'customer'){
     res.status ('Unauthorized')  
         next()
+    }
     } catch(error) {
         res.status(400).send({ message: error.message })
     }
@@ -59,7 +60,7 @@ dataController.destroy = async (req, res, next) => {
     res.locals.data.product = await Product.findByIdAndDelete(req.params.id)
      
     next()
-  } else {
+  } else if (user.role === 'customer'){
     res.status(403).json({ error: 'Unauthorized' })
   }
     } catch(error) {

@@ -2,9 +2,11 @@ const React = require('react')
 
 function Edit (props) {
     const { name, _id, descreption, image } = props.category
+
     return(
         <layout>
         <div>
+        
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>{name} Edit Page</h1>
             <a href='/category'>Go back to Index Page</a>

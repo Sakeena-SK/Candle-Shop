@@ -2,6 +2,8 @@ const React = require('react')
 
 function Index (props){
     const categories = props.categories
+        console.log(props)
+    console.log(props.data)
     return (
         <layout>
         <div>
