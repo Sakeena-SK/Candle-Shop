@@ -2,7 +2,6 @@ const React = require('react')
 
 function Edit (props) {
     const { name, _id, price, image } = props.product
-    if ( User.role === 'owner') {
     return(
         <layout>
         <div>
@@ -18,9 +17,6 @@ function Edit (props) {
             </form>
         </div></layout>
     )
-    } else {
-        return //index
-    }
 }
 
 module.exports = Edit

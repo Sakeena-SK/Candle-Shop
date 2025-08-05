@@ -2,7 +2,6 @@ const React = require('react')
 
 function Edit (props) {
     const { name, _id, descreption, image } = props.category
-        if (User.role === 'owner'){
     return(
         <layout>
         <div>
@@ -20,9 +19,6 @@ function Edit (props) {
         </div></layout>
     )
         }   
-        else {
-            return //index.jsx
-        }
-}
+
 
 module.exports = Edit

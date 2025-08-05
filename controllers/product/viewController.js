@@ -16,7 +16,10 @@ const viewController = {
     res.render('product/Edit', res.locals.data)
   },
   newView(req, res, next){
-    res.render('product/New', res.locals.data)
+    res.render('product/New', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   redirectHome(req, res, next){
     if(res.locals.data.token){
