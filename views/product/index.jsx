@@ -13,7 +13,13 @@ function Index (props){
                 {
                     
                    products.map((product) => {
-                    return (<li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.price}</li>)
+                    return (
+                    <>
+                        <li><img src={`${product.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
+                        <li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.descreption}</li>
+                    </>
+                    )
+                    
                    }) 
                 }
             </ul>
@@ -28,7 +34,12 @@ function Index (props){
                 {
                     
                    products.map((product) => {
-                    return (<li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.price}</li>)
+                    return (
+                    <>
+                        <li><img src={`${product.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
+                        <li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.descreption}</li>
+                    </>
+                    )
                    }) 
                 }
             </ul>

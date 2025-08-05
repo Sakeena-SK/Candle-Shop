@@ -12,6 +12,16 @@ dataController.index = async (req, res, next) => {
   }
 }
 
+dataController.categoryProducts = async (req, res, next) => {
+   try {
+    const products = await Product.find({category: req.params.id})
+    res.locals.data.products = products
+    next()
+   } catch(error) {
+    res.status(400).send({ message: error.message })
+  }
+}
+
 dataController.update = async (req, res, next) => {
   const user = req.user
   try {
@@ -28,18 +38,20 @@ if (user.role === 'owner') {
 }
 
 dataController.create = async (req, res, next) => {
-    const user = req.user
+  
+  const user = req.user;
   try {
     if (user.role === 'owner') {
-      const newProduct = await Product.create(req.body)
-    }else if (user.role === 'customer'){
-    res.status ('Unauthorized')  
-        next()
+      const newProduct = await Product.create(req.body);
+      // res.locals.data = { product: newProduct }; // ضروري علشان توصل للـ apiController
+      next();
+    } else if (user.role === 'customer') {
+      return res.status(403).json({ error: 'Unauthorized' }); // لازم ترجع الرد وتوقف
     }
-    } catch(error) {
-        res.status(400).send({ message: error.message })
-    }
-}
+  } catch (error) {
+    res.status(400).send({ message: error.message });
+  }
+};
 
 dataController.show = async (req,res,next) => {
     try {

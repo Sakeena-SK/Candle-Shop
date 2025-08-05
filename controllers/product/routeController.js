@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const viewController = require('./viewController.js')
+const productsViewController = require('../product/viewController.js')
 const dataController = require('./dataController.js')
 const authDataController = require('../auth/dataController.js')
 // add routes
@@ -10,6 +11,13 @@ router.get('/', authDataController.auth
     dataController.index
     /*grab and save the logged in user's category */, 
     viewController.index
+    /* display the logged in users category and also the link to the new page with the token*/
+);
+router.get('/:id/products', authDataController.auth
+    /* check if the token exists in the header or the query, set req.user and res.locals.data.token */ , 
+    dataController.categoryProducts
+    /*grab and save the logged in user's category */, 
+    productsViewController.index
     /* display the logged in users category and also the link to the new page with the token*/
 );
 // New

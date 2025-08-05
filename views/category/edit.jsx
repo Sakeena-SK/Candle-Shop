@@ -15,31 +15,7 @@ function Edit (props) {
                 Name: <input type="text" name="name" defaultValue={name} /><br/>
                 Descreption: <input type="text" name="descreption" defaultValue={descreption}/><br/>
                 Image: <input type="text" name="image" defaultValue={image}/><br/>
-                {/* <input type="submit" value="Update Category" />
-                 <label htmlFor="imageUrl" className="form-label">Or Image URL:</label>
-          <input
-            id="imageUrl"
-            name="imageUrl"
-            type="url"
-            className="form-input"
-            placeholder="Paste image URL here"
-            defaultValue={
-              category.image && !category.image.startsWith('uploads/')
-                ? category.image
-                : ''
-            }
-          />
-
-          {category.image && (
-            <div className="current-image">
-              <p>Current Image:</p>
-              <img
-                src={category.image.startsWith('http') ? category.image : `/${category.image}`}
-                alt={category.title}
-                style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}
-              />
-            </div>
-          )} */}
+                <input type="submit" value="Update Category" />
             </form>
         </div></layout>
     )

@@ -18,8 +18,8 @@ function Index (props){
                    categories.map((category) => {
                     return (
                         <>
-                    <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
-                            <li><img src={`${category.image}?token=${props.token}`}/></li>
+                            <li><img src={`${category.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
+                            <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
                             </>
                     )
                    }) 
@@ -37,7 +37,12 @@ function Index (props){
                 {
                     
                    categories.map((category) => {
-                    return (<li><a href={`/category/${category._id}/products?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>)
+                    return (
+                        <>
+                        <li><a href={`/category/${category._id}/products?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
+                        <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
+                        </>
+                    )
                    }) 
                 }
             </ul>
