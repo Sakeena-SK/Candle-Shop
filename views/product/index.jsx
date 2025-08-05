@@ -6,9 +6,12 @@ function Index (props){
     return (
         <Layout>
         <div>
+            <nav class="navbar">
+                <div class="categoryProduct">
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
-            <h1>product Page</h1>
-            <a href={`/product/new?token=${props.token}`}>Create A New product</a>
+            </div></nav>
+            <h1>products</h1>
+            <a href={`/product/new?token=${props.token}`}>Add product</a>
             <ul>
 
                 {
@@ -30,7 +33,11 @@ function Index (props){
         return (
             <Layout>
         <div>
-            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
+            <nav class="navbar">
+                <div class="categoryProduct">
+                    <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
+                </div>
+            </nav>
             <h1>product Page</h1>
             <ul>
                 {

@@ -5,7 +5,11 @@ function Show(props){
  return(
     <html><Layout product={props.product}>
         <body>
-            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
+            <nav class="navbar">              
+                <div class="categoryProduct">
+                    <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
+                </div>
+            </nav>
             <div className="container">
                 {props.children}
             </div>

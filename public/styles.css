@@ -1,3 +1,83 @@
 *{
-    background-color: rgb(197, 57, 57);
+    background-color: #f8f6f3;
 }
+.navbar{
+  top: 0;
+  right: 0;
+  left: 0;
+  background-image: url('/assets/candlebar6.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 150px;
+  font-size: 20px
+  
+}
+
+div{
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+.signin{
+/* how to change the color remove the underline and change the position of it */
+    display: flex;
+    text-align: center;
+    justify-content: flex-start space-between;
+    gap: 40px;
+}
+
+.signup{
+/* how to change the color remove the underline and change the position of it */
+    display: flex;
+    text-align: center;
+    justify-content: flex-start space-between;
+    gap: 40px;
+}
+
+.categoryProduct{
+    /* how to change the color remove the underline and change the position of it */
+    display: flex;
+    text-align: center;
+    justify-content: flex-start space-between;
+    gap: 40px;
+}
+
+.signinBox{
+    border: 1.5px solid black;
+    background-color: #a0907e;
+    padding: 40px;
+    margin: 20px auto;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+.signinBox *{
+    background-color: transparent;
+    /* adding spaces between elements and normal backgrounds for the textboxes */
+}
+.signupBox{
+    border: 1.5px solid black;
+    background-color: #a0907e;
+    padding: 40px;
+    margin: 20px auto;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.signupBox *{
+    background-color: transparent;
+        /* adding spaces between elements and normal backgrounds for the textboxes */
+
+}    
