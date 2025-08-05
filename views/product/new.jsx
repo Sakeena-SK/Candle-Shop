@@ -3,7 +3,7 @@ const React = require('react')
 function New (props) {
     return(
         <div>
-            {/* <a href='/layout'>Home</a><a href='/category'>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a> */}
+            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
             <h1>Products</h1>
             <a href={`/product?token=${props.token}`}>Cancle</a>
             
