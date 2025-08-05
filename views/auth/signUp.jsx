@@ -5,7 +5,9 @@ function SignUp (props) {
     return(
         <layout>
         <div>
-            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
+            {/* <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a> */}
+            <a href='/'>Home</a>
+            <a href='/users/login'>Login</a>
             <h1>Sign Up For The Greatest Of All Time</h1>
             <form action="/users" method="POST">
                 Name: <input type="text" name="name" /><br/>

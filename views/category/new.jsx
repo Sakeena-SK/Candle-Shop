@@ -4,7 +4,7 @@ function New (props) {
     return(
         <layout>
         <div>
-            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a>
+            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>Categories</h1>
             <a href={`/category?token=${props.token}`}>Cancle</a>
             
