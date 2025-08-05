@@ -1,8 +1,9 @@
 const React = require('react')
+const Layout = require('../layouts/layout')
 
 function New (props) {
     return(
-        <layout>
+        <Layout>
         <div>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>Categories</h1>
@@ -17,7 +18,7 @@ function New (props) {
             
           
             </form>
-        </div></layout>
+        </div></Layout>
     )
 }
 

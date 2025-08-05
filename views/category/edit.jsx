@@ -1,11 +1,12 @@
 import category from '../../models/category'
+const Layout = require('../layouts/layout')
 
 const React = require('react')
 
 function Edit (props) {
     const { name, _id, descreption, image } = props.category
     return(
-        <layout>
+       <Layout category={props.category}>
         <div>
         
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
@@ -17,7 +18,7 @@ function Edit (props) {
                 Image: <input type="text" name="image" defaultValue={image}/><br/>
                 <input type="submit" value="Update Category" />
             </form>
-        </div></layout>
+        </div></Layout>
     )
         }   
 

@@ -1,7 +1,9 @@
 const React = require('react')
+const Layout = require('../layouts/layout')
 
 function New (props) {
     return(
+        <Layout>
         <div>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>Products</h1>
@@ -13,7 +15,7 @@ function New (props) {
                 Image: <input type="text" name="Image" /><br/>
                 <input type="submit" value="Create product" />
             </form>
-        </div>
+        </div></Layout>
     )
 }
 

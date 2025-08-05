@@ -1,8 +1,9 @@
 const React = require('react')
+const Layout = require('../layouts/layout')
 
 function SignIn (props) {
     return(
-        <layout>
+        <Layout>
         <div>
             {/* <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/signUp'>Login/SignUp</a> */}
             <a href='/'>Home</a>
@@ -15,7 +16,7 @@ function SignIn (props) {
                 <input type="submit" value="Submit to Login" />
             </form>
         </div>
-        </layout>
+        </Layout>
     )
 }
 

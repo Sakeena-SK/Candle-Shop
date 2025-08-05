@@ -1,4 +1,5 @@
 const React = require('react')
+const Layout = require('../layouts/layout')
 
 function Index (props){
     const categories = props.categories
@@ -6,7 +7,7 @@ function Index (props){
     console.log(props.data)
     if ( props.user.role === 'owner'){
     return (
-        <layout>
+        <Layout>
         <div>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>Categories</h1>
@@ -25,7 +26,7 @@ function Index (props){
                    }) 
                 }
             </ul>
-        </div></layout>
+        </div></Layout>
     )
     }else {
            return (

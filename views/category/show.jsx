@@ -1,11 +1,12 @@
 const React = require('react')
+const Layout = require('../layouts/layout')
 
 const styles = {
     backgroundColor: 'skyblue',
 }
 function Show(props){
     return(
-        <layout>
+        <Layout category={props.category}>
         <div style={styles}>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>{props.category.name}</h1>
@@ -21,7 +22,7 @@ function Show(props){
             <div>
             <a href={`/category/${props.category._id}/edit?token=${props.token}`}><button>{`Edit this ${props.category.name}`}</button></a>
             </div>
-        </div></layout>
+        </div></Layout>
     )
 }
 
