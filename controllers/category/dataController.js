@@ -19,7 +19,7 @@ if (user.role === 'owner') {
   const updatedCategory = await Category.findByIdAndUpdate(req.params.id, req.body, { new: true })
   res.locals.data.category = updatedCategory
   next()
-} else {
+} else if (user.role === 'customer'){
   res.status(403).json({ error: 'Unauthorized' })
 }
     } catch(error) {
@@ -32,15 +32,17 @@ dataController.create = async (req, res, next) => {
   try {
     if (user.role === 'owner') {
       const newCategory = await Category.create(req.body)
-    }else
+    }else if (user.role === 'customer'){
     res.status ('Unauthorized')  
         next()
+    }
     } catch(error) {
         res.status(400).send({ message: error.message })
     }
 }
 
 dataController.show = async (req,res,next) => {
+
     try {
         res.locals.data.category = await Category.findById(req.params.id)
         if (!res.locals.data.category) {
@@ -59,7 +61,7 @@ dataController.destroy = async (req, res, next) => {
     res.locals.data.category = await Category.findByIdAndDelete(req.params.id)
      
     next()
-  } else {
+  } else if( user.role === 'customer') {
     res.status(403).json({ error: 'Unauthorized' })
   }
     } catch(error) {
