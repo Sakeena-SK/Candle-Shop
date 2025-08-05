@@ -11,7 +11,7 @@ function Show(props){
             <h1>{props.category.name}</h1>
             <a href={`/category/?token=${props.token}`}>Go back to Categories Page</a>
             <a href={`/product/?token=${props.token}`}>Products Page</a>
-            <img src={`${props.category.image}`} alt={props.category.name} />
+            <img src={`${props.category.image}`}/>
             <p>
                 The {props.category.name} is {props.category.Descreption}
             </p>

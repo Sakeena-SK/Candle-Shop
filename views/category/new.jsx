@@ -11,8 +11,11 @@ function New (props) {
             <form action={`/category?token=${props.token}`} method="POST">
                 Name: <input type="text" name="name" /><br/>
                 Descreption: <input type="text" name="descreption" /><br/>
-                Image: <input type="text" name="Image" /><br/>
+                Image: <input type="text" name="image" /><br/>
                 <input type="submit" value="Create Category" />
+
+            
+          
             </form>
         </div></layout>
     )

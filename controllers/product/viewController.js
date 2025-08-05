@@ -7,13 +7,22 @@ const viewController = {
     res.render('/auth/SignIn')
   },
   index(req, res, next){
-    res.render('product/Index', res.locals.data)
+    res.render('product/Index', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   show(req, res, next){
-    res.render('product/Show', res.locals.data)
+    res.render('product/Show', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   edit(req, res, next){
-    res.render('product/Edit', res.locals.data)
+    res.render('product/Edit', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   newView(req, res, next){
     res.render('product/New', {

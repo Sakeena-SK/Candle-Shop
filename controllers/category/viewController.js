@@ -7,16 +7,28 @@ const viewController = {
     res.render('/auth/SignIn')
   },
   index(req, res, next){
-    res.render('category/Index', res.locals.data)
+    res.render('category/Index', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   show(req, res, next){
-    res.render('category/Show', res.locals.data)
+    res.render('category/Show', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   edit(req, res, next){
-    res.render('category/Edit', res.locals.data)
+    res.render('category/Edit', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   newView(req, res, next){
-    res.render('category/New', res.locals.data)
+    res.render('category/New', {
+      ...res.locals.data,
+      user: req.user
+    })
   },
   redirectHome(req, res, next){
     if(res.locals.data.token){

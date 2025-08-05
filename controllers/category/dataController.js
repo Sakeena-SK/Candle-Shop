@@ -1,4 +1,5 @@
 const Category = require('../../models/category.js');
+const Product = require('../../models/product.js');
 
 const dataController = {}
 
@@ -11,6 +12,17 @@ dataController.index = async (req, res, next) => {
     res.status(400).send({ message: error.message })
   }
 }
+
+dataController.categoryProducts = async (req, res, next) => {
+   try {
+    const products = await Product.find({category: req.params.id})
+    res.locals.data.products = products
+    next()
+   } catch(error) {
+    res.status(400).send({ message: error.message })
+  }
+}
+
 
 dataController.update = async (req, res, next) => {
   const user = req.user
@@ -32,8 +44,8 @@ dataController.create = async (req, res, next) => {
   try {
     if (user.role === 'owner') {
       const newCategory = await Category.create(req.body)
+      next()
     }else if (user.role === 'customer'){
-    res.status ('Unauthorized')  
         next()
     }
     } catch(error) {
@@ -41,7 +53,7 @@ dataController.create = async (req, res, next) => {
     }
 }
 
-dataController.show = async (req,res,next) => {
+dataController.show = async (req,res,next) => {  
 
     try {
         res.locals.data.category = await Category.findById(req.params.id)

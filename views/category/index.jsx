@@ -4,7 +4,7 @@ function Index (props){
     const categories = props.categories
         console.log(props)
     console.log(props.data)
-    if ( User.role === 'owner'){
+    if ( props.user.role === 'owner'){
     return (
         <layout>
         <div>
@@ -13,10 +13,15 @@ function Index (props){
             <a href={`/category/new?token=${props.token}`}>Create A New Category</a>
             <ul>
 
-                {
+                {            
                     
                    categories.map((category) => {
-                    return (<li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.Descreption}</li>)
+                    return (
+                        <>
+                    <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
+                            <li><img src={`${category.image}?token=${props.token}`}/></li>
+                            </>
+                    )
                    }) 
                 }
             </ul>
@@ -32,7 +37,7 @@ function Index (props){
                 {
                     
                    categories.map((category) => {
-                    return (<li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.Descreption}</li>)
+                    return (<li><a href={`/category/${category._id}/products?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>)
                    }) 
                 }
             </ul>
