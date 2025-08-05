@@ -10,6 +10,7 @@ function Layout(props){
         </head>
         <body>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
+           {/* //nav bar goes here */}
             <div className="container">
                 {props.children}
             </div>

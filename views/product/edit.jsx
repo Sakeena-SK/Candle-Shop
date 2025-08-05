@@ -1,9 +1,10 @@
 const React = require('react')
+//const require layout
 
 function Edit (props) {
     const { name, _id, price, image } = props.product
     return(
-        <layout>
+        <layout >
         <div>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>{name} Edit Product</h1>
@@ -15,7 +16,9 @@ function Edit (props) {
                 Image: <input type="text" name="image" defaultValue={image}/><br/>
                 <input type="submit" value="Update product" />
             </form>
-        </div></layout>
+        </div>
+        </layout>
+    
     )
 }
 
