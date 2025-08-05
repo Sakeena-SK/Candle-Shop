@@ -9,7 +9,7 @@ function Edit (props) {
         
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>{name} Edit Page</h1>
-            <a href='/category'>Go back to Index Page</a>
+            <a href='/category'>back to Category</a>
             <img src="/assets/WhatsApp Image 2025-06-21 at 22.06.14_23e3b0fa.jpg" alt="" />
             <form action={`/category/${_id}?_method=PUT&token=${props.token}`} method="POST">
                 Name: <input type="text" name="name" defaultValue={name} /><br/>
