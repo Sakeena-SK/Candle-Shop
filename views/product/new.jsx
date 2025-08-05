@@ -1,6 +1,7 @@
 const React = require('react')
 
 function New (props) {
+    if (User.role === 'owner') {
     return(
         <div>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
@@ -15,6 +16,9 @@ function New (props) {
             </form>
         </div>
     )
+    }else {
+        return //index
+    }
 }
 
 module.exports = New

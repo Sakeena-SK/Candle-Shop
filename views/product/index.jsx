@@ -2,6 +2,7 @@ const React = require('react')
 
 function Index (props){
     const products = props.products
+    if (User.role === 'owner') {
     return (
         <div>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
@@ -18,6 +19,22 @@ function Index (props){
             </ul>
         </div>
     )
+    } else {
+        return (
+        <div>
+            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
+            <h1>product Page</h1>
+            <ul>
+                {
+                    
+                   products.map((product) => {
+                    return (<li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.price}</li>)
+                   }) 
+                }
+            </ul>
+        </div>
+    )
+    }
 }
 
 module.exports = Index

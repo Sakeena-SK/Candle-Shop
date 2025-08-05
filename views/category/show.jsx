@@ -9,7 +9,7 @@ function Show(props){
         <div style={styles}>
             <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
             <h1>{props.category.name}</h1>
-            <a href={`/category/?token=${props.token}`}>Go back to Index Page</a>
+            <a href={`/category/?token=${props.token}`}>Go back to Categories Page</a>
             <a href={`/product/?token=${props.token}`}>Products Page</a>
             <img src={`${props.category.image}`} alt={props.category.name} />
             <p>

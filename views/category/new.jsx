@@ -1,6 +1,7 @@
 const React = require('react')
 
 function New (props) {
+    if (User.role === 'owner') {
     return(
         <layout>
         <div>
@@ -16,6 +17,9 @@ function New (props) {
             </form>
         </div></layout>
     )
+    } else {
+        return //index.jsx
+    }
 }
 
 module.exports = New
