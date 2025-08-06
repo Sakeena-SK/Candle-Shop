@@ -25,6 +25,7 @@ const viewController = {
     })
   },
   newView(req, res, next){
+    res.locals.data.categoryId = req.params.id
     res.render('product/New', {
       ...res.locals.data,
       user: req.user

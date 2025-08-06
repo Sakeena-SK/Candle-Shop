@@ -17,6 +17,7 @@ dataController.categoryProducts = async (req, res, next) => {
    try {
     const products = await Product.find({category: req.params.id})
     res.locals.data.products = products
+    res.locals.data.categoryId = req.params.id
     next()
    } catch(error) {
     res.status(400).send({ message: error.message })

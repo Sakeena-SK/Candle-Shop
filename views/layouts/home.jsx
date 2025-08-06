@@ -2,14 +2,14 @@ const React = require('react')
 const Layout = require('../layouts/layout')
 
 function Home (props) {
-    
-    const category = props.category
-    let selectedCategory = []
+
+    const categories = props.categories
+    let selectedCategories = []
 
 function randomCategory() {
-    const shuffled = category.sort(() => 0.5 - Math.random())
+    const shuffled = categories.sort(() => 0.5 - Math.random())
     const selected = shuffled.slice(0, 3)
-    selectedCategory = [...selected]
+    selectedCategories = [...selected]
 }
 
 randomCategory()
@@ -23,23 +23,24 @@ function randomProducts() {
     selectedProducts = [...selected]
 }
 
-randomProduct()
+randomProducts()
 
     return(
         <Layout>
         <div>
             <nav class="navbar">
-                <div class="categoryProduct">
                     <nav class="productBar">
-                        <a class="nav-link" href='/'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
-                    </nav>  
-                </div>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
+                    </nav>
+                    <nav className='productBar'>
+                        <a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
             </nav>
             <h1>Home</h1>
                         <ul>
                 {            
                     
-                   categories.map((category) => {
+                   selectedCategories.map((category) => {
                     return (
                         <>
                             <li><img src={`${category.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>

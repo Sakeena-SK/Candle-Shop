@@ -2,7 +2,7 @@
     background-color: #f8f6f3;
 }
 
-input , select {
+input , select , option{
   background-color: #ddd4c6 !important;
   padding: 10px 15px 10px 15px;
 
@@ -11,17 +11,32 @@ input , select {
   font-size: 42px;
 }
 
+.signupFont{
+  font-size: 42px;
+}
 .emailinput {
   margin-bottom: 10px;
 }
 
-.loginbtn{
+.loginbtn {
   margin-top: 50px;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   border-radius: 10px;
   font-family: "Noto Serif", serif;
-
+  background-color: #a0907e;
+  color: #3e2f1c;;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  border: 1.5px solid black;
 }
+
+.loginbtn:hover {
+  transform: translateY(-5px) scale(1.05);
+  background-color: #fff3e0;
+  color: white;
+}
+
 
 
 div{
@@ -33,12 +48,15 @@ div{
 }
 
 .navbar {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* position: relative; */
   background-image: url('/assets/candlebar6.png');
   background-size: contain;
   background-repeat: no-repeat;
   height: 150px;
   font-size: 20px;
+  /* margin-top: 55px;     */
 }
 
 .signin {
@@ -59,11 +77,11 @@ div{
 }
 
 .logoutLink{
+  display: flex;
   color: #827465;
   text-decoration: none;
   font-weight: bold;
   background-color: transparent;
-  nav-right: 20px;
 }
 
 .signup{
@@ -76,9 +94,8 @@ div{
 }
 
 .productBar{
-  position: absolute;
-  top: 55px;    
-  left: 20px;
+  /* position: absolute; */
+  margin-top: 55px;    
   display: flex;
   gap: 20px;
   background-color: transparent;  
@@ -106,9 +123,14 @@ div{
     align-items: center;
     text-align: center;
     gap: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
 }
 .signinBox *{
     background-color: transparent;
+      border-radius: 10px;
+
     /* adding spaces between elements and normal backgrounds for the textboxes */
 }
 .signupBox{
@@ -116,16 +138,23 @@ div{
     background-color: #a0907e;
     padding: 40px;
     margin: 20px auto;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
 }
 .signupBox *{
     background-color: transparent;
-        /* adding spaces between elements and normal backgrounds for the textboxes */
+    border-radius: 10px;
 
 }    
+
+.form-input-div {
+  text-align: left;
+}

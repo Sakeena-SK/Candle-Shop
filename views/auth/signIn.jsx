@@ -16,8 +16,14 @@ function SignIn(props) {
             <div class="signinBox">
                 <h1 class="loginFont">Log In</h1>
                 <form action="/users/login" method="POST">
-                    Email: <input class='emailinput'type="email" name="email" /><br />
-                    Password: <input type="password" name="password" /><br />
+                    <div className='form-input-div'>
+                        <label htmlFor="email">Email: </label><br />
+                        <input class='emailinput'type="email" name="email" /><br />
+                    </div>
+                    <div className='form-input-div'>
+                        <label htmlFor="password">Password: </label><br />
+                        <input type="password" name="password" /><br />
+                    </div>
                     <input class='loginbtn' type="submit" value="Login" />
                 </form>
             </div>

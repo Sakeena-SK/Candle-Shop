@@ -1,4 +1,5 @@
 const Product = require('../../models/product.js');
+const Category = require('../../models/category.js')
 
 const dataController = {}
 
@@ -42,6 +43,8 @@ dataController.create = async (req, res, next) => {
   const user = req.user;
   try {
     if (user.role === 'owner') {
+      const category = await Category.findById(req.params.id)
+      req.body.category = category._id
       const newProduct = await Product.create(req.body);
       // res.locals.data = { product: newProduct }; // ضروري علشان توصل للـ apiController
       next();

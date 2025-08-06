@@ -2,6 +2,7 @@ const React = require('react')
 const Layout = require('../layouts/layout')
 function Index (props){
     const products = props.products
+    console.log(props)
     if (props.user.role === 'owner') {
     return (
         <Layout>
@@ -9,12 +10,12 @@ function Index (props){
             <nav class="navbar">
                 <div class="categoryProduct">
                     <nav class="productBar">
-                        <a class="nav-link" href='/layout'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
                     </nav>
                 </div>
             </nav>
             <h1>products</h1>
-            <a href={`/product/new?token=${props.token}`}>Add product</a>
+            <a href={`/product/new/${props.categoryId}?token=${props.token}`}>Add product</a>
             <ul>
 
                 {
@@ -39,7 +40,7 @@ function Index (props){
             <nav class="navbar">
                 <div class="categoryProduct">
                     <nav class="productBar">
-                        <a class="nav-link" href='/layout'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
                     </nav>
                 </div>
             </nav>

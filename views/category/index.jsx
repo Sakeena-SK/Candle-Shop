@@ -11,7 +11,7 @@ function Index (props){
         <div>
             <nav class="navbar">
                     <nav class="categoryBar">
-                        <a class="nav-link" href='/layout'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
             <h1>Categories</h1>
@@ -39,7 +39,7 @@ function Index (props){
             <nav class="navbar">
                 <div class="categoryProduct">
                     <nav class="categoryBar">
-                        <a class="nav-link" href='/layout'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
                     </nav>
                 </div>
             </nav>
@@ -50,7 +50,7 @@ function Index (props){
                    categories.map((category) => {
                     return (
                         <>
-                        <li><a href={`/category/${category._id}/products?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
+                            <li><img src={`${category.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
                         <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
                         </>
                     )
