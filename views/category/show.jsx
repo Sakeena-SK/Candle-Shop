@@ -9,9 +9,12 @@ function Show(props){
         <Layout category={props.category}>
         <div style={styles}>
             <nav class="navbar">
-            <div class="categoryProduct">
-            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
-            </div></nav>
+                <div class="categoryProduct">
+                    <nav class="categoryBar">
+                        <a class="nav-link" href='/layout'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
+                </div>
+            </nav>
             <h1>{props.category.name}</h1>
             <a href={`/category/?token=${props.token}`}>Back</a>
             <a href={`/product/?token=${props.token}`}>Products</a>

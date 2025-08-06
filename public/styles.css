@@ -1,48 +1,96 @@
 *{
     background-color: #f8f6f3;
 }
-.navbar{
-  top: 0;
-  right: 0;
-  left: 0;
-  background-image: url('/assets/candlebar6.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 150px;
-  font-size: 20px
-  
+
+input , select {
+  background-color: #ddd4c6 !important;
+  padding: 10px 15px 10px 15px;
+
 }
+.loginFont{
+  font-size: 42px;
+}
+
+.emailinput {
+  margin-bottom: 10px;
+}
+
+.loginbtn{
+  margin-top: 50px;
+  padding: 10px 15px 10px 15px;
+  border-radius: 10px;
+  font-family: "Noto Serif", serif;
+
+}
+
 
 div{
   font-family: "Noto Serif", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: weight;
   font-style: normal;
   font-variation-settings: "wdth" 100;
 }
-.signin{
-/* how to change the color remove the underline and change the position of it */
-    display: flex;
-    text-align: center;
-    justify-content: flex-start space-between;
-    gap: 40px;
+
+.navbar {
+  position: relative;
+  background-image: url('/assets/candlebar6.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 150px;
+  font-size: 20px;
+}
+
+.signin {
+  position: absolute;
+  top: 55px;    
+  left: 20px;
+  display: flex;
+  gap: 20px;
+  background-color: transparent;
+  
+}
+
+.nav-link {
+  color: #827465;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.logoutLink{
+  color: #827465;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+  nav-right: 20px;
 }
 
 .signup{
-/* how to change the color remove the underline and change the position of it */
-    display: flex;
-    text-align: center;
-    justify-content: flex-start space-between;
-    gap: 40px;
+  position: absolute;
+  top: 55px;    
+  left: 20px;
+  display: flex;
+  gap: 20px;
+  background-color: transparent;
 }
 
-.categoryProduct{
-    /* how to change the color remove the underline and change the position of it */
-    display: flex;
-    text-align: center;
-    justify-content: flex-start space-between;
-    gap: 40px;
+.productBar{
+  position: absolute;
+  top: 55px;    
+  left: 20px;
+  display: flex;
+  gap: 20px;
+  background-color: transparent;  
+}
+
+.categoryBar{
+  position: absolute;
+  top: 55px;    
+  left: 20px;
+  display: flex;
+  gap: 20px;
+  background-color: transparent;
 }
 
 .signinBox{
@@ -50,8 +98,8 @@ div{
     background-color: #a0907e;
     padding: 40px;
     margin: 20px auto;
-    width: 300px;
-    height: 200px;
+    width: 350px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;

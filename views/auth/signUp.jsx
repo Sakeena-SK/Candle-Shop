@@ -7,8 +7,8 @@ function SignUp (props) {
         <div>
             <nav class="navbar">
                 <div class="signup">
-            <a href='/'>Home</a>
-            <a href='/users/login'>Login</a>
+            <a class="nav-link" href='/'>Home</a>
+            <a class="nav-link" href='/users/login'>Login</a>
            </div> </nav>
            <div class="signupBox">
             <h1>Sign Up</h1>

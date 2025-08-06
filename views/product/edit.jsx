@@ -9,8 +9,11 @@ function Edit (props) {
         <div>
             <nav class="navbar">
                 <div class="categoryProduct">
-            <a href='/layout'>Home</a><a href={`/category?token=${props.token}`}>Category</a><a href='/cart'>Cart</a><a href='/users'>Logout</a>
-            </div></nav>
+                    <nav class="productBar">
+                        <a class="nav-link" href='/layout'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
+                </div>
+            </nav>
             <h1>{name} Edit Product</h1>
             <a href='/product'>Back</a>
             <form action={`/product/${_id}?_method=PUT&token=${props.token}`} method="POST">

@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 const viewController = require('./viewController.js')
 const productsViewController = require('../product/viewController.js')
 const dataController = require('./dataController.js')
