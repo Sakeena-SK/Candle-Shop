@@ -3,10 +3,11 @@
 }
 
 input , select , option{
-  background-color: #ddd4c6 !important;
+  background-color: #f3ebe0 !important;
   padding: 10px 15px 10px 15px;
-
+  border-radius: 10px;
 }
+
 .loginFont{
   font-size: 42px;
 }
@@ -102,8 +103,8 @@ div{
 }
 
 .categoryBar{
-  position: absolute;
-  top: 55px;    
+  /* position: absolute; */
+  margin-top: 55px;    
   left: 20px;
   display: flex;
   gap: 20px;
@@ -157,4 +158,19 @@ div{
 
 .form-input-div {
   text-align: left;
+}
+
+.catEditHead {
+  color: #665b4f;
+}
+
+.back {
+  border: 1.5px solid black;
+  background-color: #f3ebe0 !important;
+  padding: 7px 15px 7px 15px;
+  border-radius: 10px;
+  color: #827465;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
 }

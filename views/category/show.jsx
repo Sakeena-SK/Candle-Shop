@@ -7,11 +7,12 @@ function Show(props){
         <Layout category={props.category}>
         <div>
             <nav class="navbar">
-                <div class="categoryProduct">
                     <nav class="categoryBar">
-                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
                     </nav>
-                </div>
+                    <nav className='categoryBar'>
+                        <a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
             </nav>
             <h1>{props.category.name}</h1>
             <a href={`/category/?token=${props.token}`}>Back</a>

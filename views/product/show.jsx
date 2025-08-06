@@ -10,11 +10,12 @@ function Show(props){
             <Layout product={props.product}>
                 <div style={styles}>
                     <nav class="navbar">
-                        <div class="categoryProduct">
                             <nav class="productBar">
-                                <a class="nav-link" href='/'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                                <a class="nav-link" href='/'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
                             </nav>
-                        </div>
+                            <nav className='productBar'>
+                                <a class="logoutLink" href='/users'>Logout</a>
+                            </nav>
                     </nav>
                     <h1>{props.category.name}</h1>
                     <a href={`/product/?token=${props.token}`}>Back</a>

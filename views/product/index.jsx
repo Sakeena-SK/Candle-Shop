@@ -8,11 +8,12 @@ function Index (props){
         <Layout>
         <div>
             <nav class="navbar">
-                <div class="categoryProduct">
                     <nav class="productBar">
-                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
                     </nav>
-                </div>
+                    <nav className='productBar'>
+                        <a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
             </nav>
             <h1>products</h1>
             <a href={`/product/new/${props.categoryId}?token=${props.token}`}>Add product</a>
@@ -38,13 +39,14 @@ function Index (props){
             <Layout>
         <div>
             <nav class="navbar">
-                <div class="categoryProduct">
                     <nav class="productBar">
-                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
                     </nav>
-                </div>
+                    <nav className='productBar'>
+                        <a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
             </nav>
-            <h1>product Page</h1>
+            <h1>Products</h1>
             <ul>
                 {
                     

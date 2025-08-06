@@ -6,11 +6,12 @@ function New (props) {
         <Layout>
         <div>
             <nav class="navbar">
-                <div class="categoryProduct">
                     <nav class="categoryBar">
-                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
+                        <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
                     </nav>
-                </div>
+                    <nav className='categoryBar'>
+                        <a class="logoutLink" href='/users'>Logout</a>
+                    </nav>
             </nav>
             <h1>Categories</h1>
             <a href={`/category?token=${props.token}`}>Cancel</a>

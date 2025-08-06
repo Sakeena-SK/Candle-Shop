@@ -9,17 +9,30 @@ function Edit (props) {
        <Layout category={props.category}>
         <div>
         <nav class="navbar">
-            <div class="categoryProduct">
-                <nav class="categoryBar">
-            <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a><a class="logoutLink" href='/users'>Logout</a>
-            </nav></div></nav>
-            <h1>{name} Edit Page</h1>
-            <a href='/category'>Cancel</a>
+            <nav class="categoryBar">
+                <a class="nav-link" href='/'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
+            </nav>
+            <nav className='categoryBar'>
+                <a class="logoutLink" href='/users'>Logout</a>
+            </nav>
+        </nav>
+            <h1 class="catEditHead">{name} Edit Page</h1>
             <form action={`/category/${_id}?_method=PUT&token=${props.token}`} method="POST">
-                Name: <input type="text" name="name" defaultValue={name} /><br/>
-                Descreption: <input type="text" name="descreption" defaultValue={descreption}/><br/>
-                Image: <input type="text" name="image" defaultValue={image}/><br/>
-                <input type="submit" value="Update" />
+            <div className="catName">
+                <label htmlFor="name">Name </label><br />
+                <input type="text" name="name" defaultValue={name} /><br/>
+            </div>
+            <div className='catDis'>
+                <label htmlFor="description">Description: </label><br />
+                <input type="text" name="descreption" defaultValue={descreption}/><br/>
+            </div>
+            <div className='Image'>
+                <label htmlFor="image">Image: </label><br />
+                <input type="text" name="image" defaultValue={image}/><br/>
+            </div>
+            <div>
+                <input type="submit" value="Update" /><a class="back" href='/category'>Back</a>
+            </div>
             </form>
         </div></Layout>
     )
