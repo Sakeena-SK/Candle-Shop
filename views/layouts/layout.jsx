@@ -2,7 +2,7 @@ const React = require('react')
 
 function Layout(props){
  return(
-    <html>
+    <>
         <head>
             <title>{!props.category?.name ? 'Categories App - The Greatest Of All Time' : `${props.category.name} - Categories App`}</title>
             <link rel="preconnect" href="https://fonts.googleapis.com"></link>
@@ -18,7 +18,7 @@ function Layout(props){
                 {props.children}
             </div>
         </body>
-    </html>
+        </>
  )
 }
 

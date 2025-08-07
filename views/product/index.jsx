@@ -16,8 +16,8 @@ function Index (props){
                     </nav>
             </nav>
             <h1 class="prodIndexHead">Products</h1>
-            <a href={`/product/new/${props.categoryId}?token=${props.token}`}>Add product</a>
-            <ul>
+            <a class="addProd" href={`/product/new/${props.categoryId}?token=${props.token}`}>Add product</a>
+            <ul className='theproductbox2'>
 
                 {
                     

@@ -20,18 +20,18 @@ function New (props) {
                 <div class="prodEdit">
                     <div className="prodName">
                         <label htmlFor="name">Description: </label><br />
-                        <input type="text" name="name" defaultValue={name}/><br/>
+                        <input type="text" name="name" /><br/>
                     </div>
                     <div className="prodPrice">
                         <label htmlFor="price">Price: </label><br />
-                        <input type="text" name="price" defaultValue={price}/><br/>
+                        <input type="text" name="price" /><br/>
                     </div>
                     <div className="prodImage">
                         <label htmlFor="image">Image URL: </label><br />
-                        <input type="text" name="image" defaultValue={image}/><br/>
+                        <input type="text" name="image" /><br/>
                     </div>
                     <div className="backNupdate">
-                        <input class="update" type="submit" value="Creat Product" /><a class="back" href='/product'>Back</a>
+                        <input class="update" type="submit" value="Creat Product" /><a class="back" href={`/product?token=${props.token}`}>Back</a>
                     </div>
                 </div>
             </form>

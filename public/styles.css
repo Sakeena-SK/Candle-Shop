@@ -203,7 +203,7 @@ div{
   font-size: 20px;
 }
 
-.addCat {
+.addCat , .addProd{
   border: 1.5px solid black;
   background-color: #f3ebe0 !important;
   padding: 8px 15px 10px 15px;
@@ -215,7 +215,7 @@ div{
   font-size: 16px;
 }
 
-.category-box {
+.box-2-cat{
   display: flex;
   flex-direction: column;
   border: 2px solid #ccc;
@@ -227,8 +227,9 @@ div{
   background-color: #f3ebe0;
   height: 300px;
   width: 250px; 
-  margin-right: 900px;
 }
+
+
 
 .category-box:hover {
   transform: scale(1.02);
@@ -296,7 +297,7 @@ div{
   height: 150px;
   object-fit: cover;
   border-radius: 10px;
-}
+} 
 
 .product-content {
   display: flex;
@@ -367,6 +368,30 @@ div{
 .imageShow {
   max-width: 100%;
   height: 150px;
-  /* object-fit: cover; */
+  object-fit: cover;
   border-radius: 10px;
 }
+
+/* ul {
+  flex-direction: column;
+} */
+
+/* .box-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;   
+} */
+
+.box-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 أعمدة */
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+.thebox2container ,.theproductbox2 {
+   display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  row-gap: 20px;
+}
+

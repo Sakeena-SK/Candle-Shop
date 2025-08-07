@@ -1,66 +1,81 @@
 const React = require('react')
 const Layout = require('../layouts/layout')
 
-function Home (props) {
+function Home(props) {
 
     const categories = props.categories
     let selectedCategories = []
 
-function randomCategory() {
-    const shuffled = categories.sort(() => 0.5 - Math.random())
-    const selected = shuffled.slice(0, 3)
-    selectedCategories = [...selected]
-}
+    function randomCategory() {
+        const shuffled = categories.sort(() => 0.5 - Math.random())
+        const selected = shuffled.slice(0, 3)
+        selectedCategories = [...selected]
+    }
 
-randomCategory()
+    randomCategory()
 
     const products = props.products
     let selectedProducts = []
 
-function randomProducts() {
-    const shuffled = products.sort(() => 0.5 - Math.random())
-    const selected = shuffled.slice(0, 8)
-    selectedProducts = [...selected]
-}
+    function randomProducts() {
+        const shuffled = products.sort(() => 0.5 - Math.random())
+        const selected = shuffled.slice(0, 8)
+        selectedProducts = [...selected]
+    }
 
-randomProducts()
+    randomProducts()
 
-    return(
+    return (
         <Layout>
-        <div>
-            <nav class="navbar">
+            <div>
+                <nav class="navbar">
                     <nav class="productBar">
                         <a class="nav-link" href={`/?token=${props.token}`}>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>
                     </nav>
                     <nav className='productBar'>
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
-            </nav>
-            <h1 class="homeHead">Home</h1>
-                        <ul>
-                {            
-                    
-                   selectedCategories.map((category) => {
-                    return (
-                        <>
-                            <li><img src={`${category.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
-                            <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
-                            </>
-                    )
-                   }) 
-                }
-                {
-                    
-                   selectedProducts.map((product) => {
-                    return (
-                    <>
-                        <li><img src={`${product.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
-                        <li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.descreption}</li>
-                    </>
-                    )
-                   }) 
-                }
-            </ul>
+                </nav>
+                <h1 class="homeHead">Home</h1>
+
+                <>
+                    <div className="box-container">
+                        {
+                            selectedCategories.map((category) => {
+                                return (
+                                    <li className="product-box" key={category.id}>
+                                        <img src={`${category.image}?token=${props.token}`} className="product-image" alt={category.name} />
+                                        <div className="product-content">
+                                            <a href={`/category/${category.id}/products?token=${props.token}`} className="product-name">
+                                                {category.name}
+                                            </a>
+                                            <p className="product-description">{category.descreption}</p>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+                    </div>
+
+                    <div className="box-container">
+                        {
+                            selectedProducts.map((product) => {
+                                return (
+                                    <li className="product-box" key={product.id}>
+                                        <img src={`${product.image}?token=${props.token}`} className="product-image" alt={product.name} />
+                                        <div className="product-content">
+                                            <a href={`/product/${product.id}?token=${props.token}`} className="product-name">
+                                                {product.name}
+                                            </a>
+                                            <p className="product-description">{product.descreption}</p>
+                                        </div>
+                                    </li>
+                                )
+                            })
+                        }
+                    </div>
+                </>
+
             </div>
         </Layout>
     )

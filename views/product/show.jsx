@@ -1,14 +1,12 @@
 const React = require('react')
 const Layout = require('../layouts/layout')
 
-const styles = {
-    backgroundColor: 'skyblue',
-}
+
 function Show(props){
     if ( props.user.role === 'owner'){
         return(
             <Layout product={props.product}>
-                <div style={styles}>
+                <div>
                     <nav class="navbar">
                             <nav class="productBar">
                                 <a class="nav-link" href='/'>Home</a><a class="nav-link" href={`/category?token=${props.token}`}>Category</a><a class="nav-link" href='/cart'>Cart</a>

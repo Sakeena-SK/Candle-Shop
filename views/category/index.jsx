@@ -19,14 +19,14 @@ function Index (props){
             </nav>
             <h1 class="catIndexHead">Categories</h1>
             <a class="addCat" href={`/category/new?token=${props.token}`}>Add Category</a>
-            <ul>
+            <ul className='thebox2container'>
 
                 {            
                     
                    categories.map((category) => {
                     return (
                         <>
-                       <li className="category-box">
+                       <li className="box-2-cat">
                             <img src={`${category.image}?token=${props.token}`} className="category-image" alt={category.name} />
                             <div className="category-content">
                                 <a href={`/category/${category.id}?token=${props.token}`} className="category-name">
@@ -56,16 +56,16 @@ function Index (props){
                     </nav>
             </nav>
             <h1 class="catIndexHead">Categories</h1>
-            <ul>
+            <ul className="box-2-cat">
                 {
                     
                    categories.map((category) => {
                     return (
                         <>
-                       <li className="category-box">
+                       <li>
                             <img src={`${category.image}?token=${props.token}`} className="category-image" alt={category.name} />
                             <div className="category-content">
-                                <a href={`/category/${category.id}?token=${props.token}`} className="category-name">
+                                <a href={`/category/${category.id}/products?token=${props.token}`} className="category-name">
                                 {category.name}
                                 </a>
                                 <p className="category-description">{category.descreption}</p>

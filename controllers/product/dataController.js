@@ -17,6 +17,7 @@ dataController.categoryProducts = async (req, res, next) => {
    try {
     const products = await Product.find({category: req.params.id})
     res.locals.data.products = products
+    res.locals.data.categoryId = req.params.id
     next()
    } catch(error) {
     res.status(400).send({ message: error.message })
@@ -59,6 +60,7 @@ dataController.create = async (req, res, next) => {
 dataController.show = async (req,res,next) => {
     try {
         res.locals.data.product = await Product.findById(req.params.id)
+        res.locals.data.category = await Category.findById(res.locals.data.product.category._id)
         if (!res.locals.data.product) {
             throw new error(`could not locate a product with the id ${req.params.id}`)
         }
