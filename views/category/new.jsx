@@ -13,15 +13,26 @@ function New (props) {
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
-            <h1>Categories</h1>
-            <a href={`/category?token=${props.token}`}>Cancel</a>
-            
+            <h1 class="catNewHead">Categories</h1>
             <form action={`/category?token=${props.token}`} method="POST">
-                Name: <input type="text" name="name" /><br/>
-                Descreption: <input type="text" name="descreption" /><br/>
-                Image: <input type="text" name="image" /><br/>
-                <input type="submit" value="Create Category" />
 
+            <div class="catEdit">
+                <div className="catName">
+                    <label htmlFor="name">Name: </label><br />
+                    <input type="text" name="name" /><br/>
+                </div>
+                <div className="catName">
+                    <label htmlFor="description">Description: </label><br />
+                    <input type="text" name="descreption" /><br/>
+                </div>
+                <div className="catName">
+                    <label htmlFor="image">Image URL: </label><br />
+                    <input type="text" name="image" /><br/>
+                </div>
+                <div className="backNupdate">
+                    <input class="create" type="submit" value="Create Category" /><a class="back" href={`/category?token=${props.token}`}>Back</a>
+                </div>
+            </div>
             
           
             </form>

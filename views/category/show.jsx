@@ -14,16 +14,17 @@ function Show(props){
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
-            <h1>{props.category.name}</h1>
-            <a href={`/category/?token=${props.token}`}>Back</a>
-            <a href={`/category/${props.category._id}/products?token=${props.token}`}>Products</a>
-            <img src={`${props.category.image}`}/>
+            <h1 class="catShowHead">{props.category.name}</h1>
               <form action={`/category/${props.category._id}?_method=DELETE&token=${props.token}`} method="POST">
-                <input type="submit" value={`Delete this ${props.category.name}`}/>
-            </form>
-            <div>
-            <a href={`/category/${props.category._id}/edit?token=${props.token}`}><button>{`Edit this ${props.category.name}`}</button></a>
+            <div class="show">
+                <a class="backCat" href={`/category/?token=${props.token}`}>Back</a>
+                <a class="prodCat" href={`/category/${props.category._id}/products?token=${props.token}`}>Products</a>
+                <input class="deleteCat" type="submit" value={`Delete Category`}/>
+                <a class="editCat" href={`/category/${props.category._id}/edit?token=${props.token}`}>Edit Category</a>
             </div>
+            <img class="imageSow" src={`${props.category.image}`} className="categorySowImage" />
+                
+            </form>
         </div></Layout>
     )
 }else {
@@ -37,7 +38,7 @@ function Show(props){
                         </nav>
                     </div>
             </nav>
-            <h1>{props.category.name}</h1>
+            <h1 class="catShowHead">{props.category.name}</h1>
             <a href={`/category/?token=${props.token}`}>Back</a>
             </div>
             </Layout>

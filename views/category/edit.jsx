@@ -18,20 +18,23 @@ function Edit (props) {
         </nav>
             <h1 class="catEditHead">{name} Edit Page</h1>
             <form action={`/category/${_id}?_method=PUT&token=${props.token}`} method="POST">
-            <div className="catName">
-                <label htmlFor="name">Name </label><br />
-                <input type="text" name="name" defaultValue={name} /><br/>
-            </div>
-            <div className='catDis'>
-                <label htmlFor="description">Description: </label><br />
-                <input type="text" name="descreption" defaultValue={descreption}/><br/>
-            </div>
-            <div className='Image'>
-                <label htmlFor="image">Image: </label><br />
-                <input type="text" name="image" defaultValue={image}/><br/>
-            </div>
-            <div>
-                <input type="submit" value="Update" /><a class="back" href='/category'>Back</a>
+
+            <div class="catEdit">
+                <div className="catName">
+                    <label htmlFor="name">Name: </label><br />
+                    <input type="text" name="name" defaultValue={name} /><br/>
+                </div>
+                <div className='catDis'>
+                    <label htmlFor="description">Description: </label><br />
+                    <input type="text" name="descreption" defaultValue={descreption}/><br/>
+                </div>
+                <div className='Image'>
+                    <label htmlFor="image">Image URL: </label><br />
+                    <input type="text" name="image" defaultValue={image}/><br/>
+                </div>
+                <div class="backNupdate">
+                    <input class="update" type="submit" value="Update" /><a class="back" href='/category'>Back</a>
+                </div>
             </div>
             </form>
         </div></Layout>

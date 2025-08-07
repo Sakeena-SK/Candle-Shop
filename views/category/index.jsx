@@ -17,8 +17,8 @@ function Index (props){
                     <a class="logoutLink" href='/users'>Logout</a>
                 </nav>
             </nav>
-            <h1>Categories</h1>
-            <a href={`/category/new?token=${props.token}`}>Add Category</a>
+            <h1 class="catIndexHead">Categories</h1>
+            <a class="addCat" href={`/category/new?token=${props.token}`}>Add Category</a>
             <ul>
 
                 {            
@@ -26,9 +26,17 @@ function Index (props){
                    categories.map((category) => {
                     return (
                         <>
-                            <li><img src={`${category.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
-                            <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
-                            </>
+                       <li className="category-box">
+                            <img src={`${category.image}?token=${props.token}`} className="category-image" alt={category.name} />
+                            <div className="category-content">
+                                <a href={`/category/${category.id}?token=${props.token}`} className="category-name">
+                                {category.name}
+                                </a>
+                                <p className="category-description">{category.descreption}</p>
+                            </div>
+                        </li>
+
+                        </>
                     )
                    }) 
                 }
@@ -47,15 +55,22 @@ function Index (props){
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
-            <h1>Categories</h1>
+            <h1 class="catIndexHead">Categories</h1>
             <ul>
                 {
                     
                    categories.map((category) => {
                     return (
                         <>
-                            <li><img src={`${category.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
-                        <li><a href={`/category/${category.id}?token=${props.token}`}>{category.name}</a> <br/> {category.descreption}</li>
+                       <li className="category-box">
+                            <img src={`${category.image}?token=${props.token}`} className="category-image" alt={category.name} />
+                            <div className="category-content">
+                                <a href={`/category/${category.id}?token=${props.token}`} className="category-name">
+                                {category.name}
+                                </a>
+                                <p className="category-description">{category.descreption}</p>
+                            </div>
+                        </li>
                         </>
                     )
                    }) 

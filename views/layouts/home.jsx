@@ -36,7 +36,7 @@ randomProducts()
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
-            <h1>Home</h1>
+            <h1 class="homeHead">Home</h1>
                         <ul>
                 {            
                     

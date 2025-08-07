@@ -15,7 +15,7 @@ function Index (props){
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
-            <h1>products</h1>
+            <h1 class="prodIndexHead">Products</h1>
             <a href={`/product/new/${props.categoryId}?token=${props.token}`}>Add product</a>
             <ul>
 
@@ -24,8 +24,16 @@ function Index (props){
                    products.map((product) => {
                     return (
                     <>
-                        <li><img src={`${product.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
-                        <li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.descreption}</li>
+                        <li className="product-box">
+                        <img src={`${product.image}?token=${props.token}`} className="product-image" alt={product.name} />
+                        <div className="product-content">
+                            <a href={`/product/${product.id}?token=${props.token}`} className="product-name">
+                            {product.name}
+                            </a>
+                            <p className="product-description">{product.descreption}</p>
+                        </div>
+                        </li>
+
                     </>
                     )
                     
@@ -46,15 +54,23 @@ function Index (props){
                         <a class="logoutLink" href='/users'>Logout</a>
                     </nav>
             </nav>
-            <h1>Products</h1>
+            <h1 class="prodIndexHead">Products</h1>
             <ul>
                 {
                     
                    products.map((product) => {
                     return (
                     <>
-                        <li><img src={`${product.image}?token=${props.token}`} style={{ maxWidth: '300px', borderRadius: '10px', boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}/></li>
-                        <li><a href={`/product/${product.id}?token=${props.token}`}>{product.name}</a> <br/> {product.descreption}</li>
+                        <li className="product-box">
+                        <img src={`${product.image}?token=${props.token}`} className="product-image" alt={product.name} />
+                        <div className="product-content">
+                            <a href={`/product/${product.id}?token=${props.token}`} className="product-name">
+                            {product.name}
+                            </a>
+                            <p className="product-description">{product.descreption}</p>
+                        </div>
+                        </li>
+
                     </>
                     )
                    }) 
