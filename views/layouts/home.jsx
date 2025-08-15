@@ -43,15 +43,15 @@ function Home(props) {
                         {
                             selectedCategories.map((category) => {
                                 return (
-                                    <li className="product-box" key={category.id}>
-                                        <img src={`${category.image}?token=${props.token}`} className="product-image" alt={category.name} />
-                                        <div className="product-content">
-                                            <a href={`/category/${category.id}/products?token=${props.token}`} className="product-name">
-                                                {category.name}
-                                            </a>
-                                            <p className="product-description">{category.descreption}</p>
-                                        </div>
-                                    </li>
+                       <li className="box-2-cat">
+                            <img src={`${category.image}?token=${props.token}`} className="category-image" alt={category.name} />
+                            <div className="category-content">
+                                <a href={`/category/${category.id}?token=${props.token}`} className="category-name">
+                                {category.name}
+                                </a>
+                                <p className="category-description">{category.descreption}</p>
+                            </div>
+                        </li>
                                 )
                             })
                         }
